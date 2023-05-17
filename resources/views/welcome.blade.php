@@ -26,7 +26,7 @@
                         <a href="{{ URL::to('registration/' . $event->id) }}" class="btn fw-semibold p-2 ps-4 pe-4" style="background-color: rgba(183, 207, 91, 1); border-radius: 40px; color: black;" id="greenbutton">Register</a>
                         <a href="" class=" btn fw-semibold p-2 ps-4 pe-4" style="background-color: rgba(183, 207, 91, 1); border-radius: 40px; text-decoration: none; color: black;" id="greenbutton">Details</a>
                     @else
-                        <a href="" class="btn fw-semibold p-2 ps-4 pe-4 w-75 text-center" style="background-color: rgba(183, 207, 91, 1); border-radius: 40px; color: black;" id="greenbutton">Details</a>
+                        <a href="" class="btn fw-semibold p-2 ps-4 pe-4 w-75 text-center" style="background-color: rgba(183, 207, 91, 1); border-radius: 40px; color: black;" id="greenbutton">halo</a>
                     @endif
                 </div>
             </div>
