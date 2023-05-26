@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ParticipantController;
+use App\Http\Controllers\MyEventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,4 @@ use App\Http\Controllers\ParticipantController;
 
 Route::resource('/', EventController::class);
 Route::resource('registration', ParticipantController::class);
+Route::resource('myevent', MyEventController::class);

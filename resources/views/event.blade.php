@@ -1,4 +1,4 @@
-<x-layout title="Home">
+<x-layout title="Event">
     <div class="row mb-2">
         @foreach ($events as $event)
         <div class="col-3 rounded mb-5" style="height: 40vh">
@@ -15,7 +15,7 @@
                     </div>
 
                     @if(Carbon\Carbon::now() >= $event->registration_start_date && Carbon\Carbon::now() <= $event->registration_end_date)
-                        <p class="shadow fw-semibold p-1" style="background-color: rgba(38, 184, 70, 1); border-radius:40px; color:white; font-size: 0.7rem">Ongoing</p>
+                        <p class="shadow fw-semibold p-1" style="background-color: rgba(38, 184, 70, 1); border-radius:40px; color:white; font-size: 0.7rem">Halo</p>
                     @else
                         <p class="shadow fw-semibold p-1" style="background-color: rgba(38, 73, 254, 1); border-radius:40px; color:white; font-size: 0.7rem">Upcoming</p>
                     @endif

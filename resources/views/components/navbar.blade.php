@@ -20,7 +20,7 @@
             <a class="nav-link fw-bold fs-5" aria-current="page" href="#" style="color: rgba(40, 84, 48, 1)" id="navmenu">Upcoming</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link fw-bold fs-5" aria-current="page" href="#" style="color: rgba(40, 84, 48, 1)" id="navmenu">My Event</a>
+            <a class="nav-link fw-bold fs-5" aria-current="page" href="{{ route('myevent.index') }}" style="color: rgba(40, 84, 48, 1)" id="navmenu">My Event</a>
         </li>
         <li class="nav-item ps-2 pe-2 pt-1 pb-1 d-flex align-items-center" style="background-color: rgba(164, 190, 123, 1); border-radius: 40px;">
             <i class="bi bi-person-circle ps-2 pe-2" style="color: rgba(40, 84, 48, 1); font-size: 1.5rem"></i>
