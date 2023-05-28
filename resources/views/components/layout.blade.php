@@ -13,7 +13,7 @@
     <div id="app">
         <x-navbar></x-navbar>
 
-        <main class="p-5">
+        <main class="p-0">
             {{ $slot }}
         </main>
 

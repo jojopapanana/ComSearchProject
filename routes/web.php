@@ -16,5 +16,6 @@ use App\Http\Controllers\ParticipantController;
 |
 */
 
+Route::get('event/{id}', [EventController::class, 'show'])->name('event.detail');
 Route::resource('/', EventController::class);
 Route::resource('registration', ParticipantController::class);
