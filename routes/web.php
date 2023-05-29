@@ -23,8 +23,8 @@ Route::prefix('event')->name('event.')->group(function() {
 Route::prefix('event')->name('event.')->group(function() {
 	Route::get('upcoming', [EventController::class, 'upcoming'])->name('upcoming');
 });
+Route::get('event/{id}', [EventController::class, 'show'])->name('event.detail');
 Route::resource('/', EventController::class);
 Route::resource('registration', ParticipantController::class);
 Route::post('/registration/{event}', [ParticipantController::class, 'store'])->name('registration.custom.store');
 Route::resource('myevent', MyEventController::class);
-
