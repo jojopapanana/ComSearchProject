@@ -24,6 +24,7 @@ class EventSeeder extends Seeder
             'registration_end_date' => '2023-7-28',
             'event_ig1' => 'bnecalamsutera',
             'event_description' => 'This event is a social event held by BNEC!',
+            'group_link' => 'https://mybnec.org/',
             'picture' => 'AUTOBIOGRAPHY.jpg'],
 
             ['event_name' => '2023 BNCC Social Event', 
@@ -34,6 +35,7 @@ class EventSeeder extends Seeder
             'registration_end_date' => '2023-6-30',
             'event_ig1' => 'bnccalsut',
             'event_description' => 'This event is a social event held by BNCC!',
+            'group_link' => 'https://bncc.net/',
             'picture' => 'avatar.jpg'],
 
             ['event_name' => 'KMBD Social Event', 
@@ -44,6 +46,7 @@ class EventSeeder extends Seeder
             'registration_end_date' => '2023-7-9',
             'event_ig1' => 'kmbdalsut',
             'event_description' => 'This event is a social event held by KMBD!',
+            'group_link' => 'https://www.kmbd.info/',
             'picture' => 'blackpanther.jpg'],
 
             ['event_name' => 'BPreneur Social Event', 
@@ -54,6 +57,7 @@ class EventSeeder extends Seeder
             'registration_end_date' => '2023-7-17',
             'event_ig1' => 'bpreneur',
             'event_description' => 'This event is a social event held by BPreneur!',
+            'group_link' => 'https://student-activity.binus.ac.id/b-preneur/',
             'picture' => 'iwdws.jpg'],
 
             ['event_name' => 'BNMC Social Event', 
@@ -64,6 +68,7 @@ class EventSeeder extends Seeder
             'registration_end_date' => '2023-7-20',
             'event_ig1' => 'bnmcalamsutera',
             'event_description' => 'This event is a social event held by BNMC!',
+            'group_link' => 'https://student-activity.binus.ac.id/bnmc/',
             'picture' => 'mindcage.jpg']
         ]);
     }
