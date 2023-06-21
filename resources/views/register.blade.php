@@ -89,8 +89,8 @@
                 @endif
 
                 <div class="d-flex justify-content-between w-100 mt-5">
-                  <a class="btn fw-semibold" href="/" role="button" style="background-color: rgba(183, 207, 91, 1); border-radius: 40px; width: 10vw">Cancel</a>
-                  <button type="submit" class="btn fw-semibold" style="background-color: rgba(183, 207, 91, 1); border-radius: 40px; width: 10vw">Register</button>
+                  <a class="btn fw-semibold shadow" href="/" role="button" style="background-color: rgba(183, 207, 91, 1); border-radius: 40px; width: 10vw">Cancel</a>
+                  <button type="submit" class="btn fw-semibold shadow" style="background-color: rgba(183, 207, 91, 1); border-radius: 40px; width: 10vw">Register</button>
                 </div>
 
                 {{-- <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">

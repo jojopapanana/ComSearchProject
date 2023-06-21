@@ -1,14 +1,22 @@
-<div class="d-flex" style="background-color: #CCD6A6">
+<div class="d-flex pb-5" style="background-color: #CCD6A6">
         <div class="align-self-center ps-5 col-4">
-            <div class="ps-4" style="font-size: 2.5rem; font-weight:bold; color:#179B7B">ComSearch</div>
+            <div class="ps-4" style="font-size: 2.5rem; font-weight:bold; color: rgba(40, 84, 48, 1)">ComSearch</div>
             <div class="ps-5" style="font-size: 0.9rem; ">Get your ComServe now!</div>
             <div class="" style="padding-left: 5vh; font-size: 0.9rem; font-weight:bold">© 2023. All rights reserved.</div>
         </div>
-        <div class="align-self-center col-2" style="font-size: 0.9rem; font-weight:bold">
-            <div class="ps-4 m-3" >Home</div>
-            <div class="ps-4 m-3" >OnGoing</div>
-            <div class="ps-4 m-3" >Upcoming</div>
-            <div class="ps-4 m-3" >MyEvent</div>
+        <div class="align-self-center col-2 mt-3" style="font-size: 0.9rem; font-weight:bold">
+            <div class="mb-3">
+                <a href="{{ route('index') }}" class="text-dark" >Home</a>
+            </div>
+            <div class="mb-3">
+                <a href="{{ route('event.ongoing') }}" class="text-dark pb-3" >Ongoing</a>
+            </div>
+            <div class="mb-3">
+                <a href="{{ route('event.upcoming') }}" class="text-dark pb-3" >Upcoming</a>
+            </div>
+            <div class="mb-3">
+                <a href="{{ route('myevent.index') }}" class="text-dark pb-3" >My Event</a>
+            </div>
         </div>
         <div class="align-self-center col-3" style="font-size: 0.9rem; font-weight:bold">
             <div class="ps-4 m-3">Legal</div>

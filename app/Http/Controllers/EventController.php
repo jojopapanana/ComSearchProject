@@ -18,7 +18,8 @@ class EventController extends Controller
      public function ongoing()
      {
          $events = Event::all();
-         return view('ongoing', ['events' => $events]);
+         $registrations = Registration::all();
+         return view('ongoing', ['events' => $events], ['registrations' => $registrations]);
      }
 
      public function upcoming()

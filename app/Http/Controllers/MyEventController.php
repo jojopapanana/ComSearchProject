@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\Participant;
+use App\Models\Registration;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 class MyEventController extends Controller
@@ -15,11 +18,11 @@ class MyEventController extends Controller
      */
     public function index()
     {
-        $events = DB::table('participants')->join('registrations', 'participants.id', '=', 'registrations.participant_id')
-                                            ->join('events', 'registrations.event_id', '=', 'events.id')
+        $events = DB::table('registrations')->join('events', 'registrations.event_id', '=', 'events.id')
                                             ->select('events.*')
-                                            ->where('participants.user_id', '=', '1')
+                                            ->where('registrations.user_id', '=', '1')
                                             ->get();
+        // dd($events);
         return view('event', ['events' => $events]);
     }
 

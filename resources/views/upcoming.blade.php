@@ -5,7 +5,7 @@
                 @if(Carbon\Carbon::now() < $event->registration_start_date)
                 <div class="col-3 rounded mb-5" style="height: 40vh">
                     <div class="h-50 rounded-top" style="background-color: gray">
-                        <img src="/storage/images/{{ $event->picture }}" alt="EVENT" class="rounded-top" style="height: 20vh; width: 21.8vw">
+                        <img src="/storage/images/events/{{ $event->poster }}" alt="EVENT" class="rounded-top w-100 h-100">
                     </div>
                     <div class="h-60 rounded-bottom p-3" style="background-color: rgba(218, 226, 182, 1)">
                         <p class="fs-5 fw-bold text-center">{{ $event->event_name }}</p>
@@ -18,7 +18,7 @@
                         </div>
         
                         <div class="d-flex justify-content-center gap-4">
-                            <a href="" class="btn fw-semibold p-2 ps-4 pe-4 w-75 text-center" style="background-color: rgba(183, 207, 91, 1); border-radius: 40px; color: black;" id="greenbutton">Details</a>
+                            <a href="{{ route('event.detail', $event->id) }}" class="btn fw-semibold p-2 ps-4 pe-4 w-75 text-center shadow" style="background-color: rgba(183, 207, 91, 1); border-radius: 40px; color: black;" id="greenbutton">Details</a>
                         </div>
                     </div>
                 </div>

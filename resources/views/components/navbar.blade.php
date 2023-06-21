@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg p-3" style="background-color: rgba(204, 214, 166, 1)">
+<nav class="navbar navbar-expand-lg p-3 fixed-top" style="background-color: rgba(204, 214, 166, 1)">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
             <img src="/storage/images/comsearchlogo.png" alt="COMSEARCH" width="100">
