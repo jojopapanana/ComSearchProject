@@ -4,35 +4,26 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\Participant;
 use App\Models\Registration;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
-class EventController extends Controller
+class MyEventController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-     public function ongoing()
-     {
-         $events = Event::all();
-         $registrations = Registration::all();
-         return view('ongoing', ['events' => $events], ['registrations' => $registrations]);
-     }
-
-     public function upcoming()
-     {
-         $events = Event::all();
-         return view('upcoming', ['events' => $events]);
-     }
-
     public function index()
     {
-        $events = Event::all();
-        $registrations = Registration::all();
-        return view('welcome', ['events' => $events], ['registrations' => $registrations]);
+        $events = DB::table('registrations')->join('events', 'registrations.event_id', '=', 'events.id')
+                                            ->select('events.*')
+                                            ->where('registrations.user_id', '=', '1')
+                                            ->get();
+        // dd($events);
+        return view('event', ['events' => $events]);
     }
 
     /**
@@ -64,8 +55,7 @@ class EventController extends Controller
      */
     public function show($id)
     {
-        $events = Event::find($id);
-        return view('detail', ['event' => $events]);
+        //
     }
 
     /**

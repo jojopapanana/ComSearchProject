@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ParticipantController;
+use App\Http\Controllers\MyEventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,5 +17,14 @@ use App\Http\Controllers\ParticipantController;
 |
 */
 
+Route::prefix('event')->name('event.')->group(function() {
+	Route::get('ongoing', [EventController::class, 'ongoing'])->name('ongoing');
+});
+Route::prefix('event')->name('event.')->group(function() {
+	Route::get('upcoming', [EventController::class, 'upcoming'])->name('upcoming');
+});
+Route::get('event/{id}', [EventController::class, 'show'])->name('event.detail');
 Route::resource('/', EventController::class);
 Route::resource('registration', ParticipantController::class);
+Route::post('/registration/{event}', [ParticipantController::class, 'store'])->name('registration.custom.store');
+Route::resource('myevent', MyEventController::class);

@@ -16,8 +16,10 @@ return new class extends Migration
         Schema::create('participants', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->string('participant_name');
-            $table->string('participant_nim');
+            $table->integer('participant_nim');
             $table->string('binusian_email');
             $table->string('instagram_account');
             $table->string('following_proof1')->nullable();
