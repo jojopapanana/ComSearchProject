@@ -1,5 +1,4 @@
-<x-layout title="Welcome">
-    <x-slot name="navbar"></x-slot>
+<x-layout title="Home">
     <div class="p-5">
         <div class="row mb-2">
             @foreach ($events as $event)
@@ -24,16 +23,7 @@
                     </div>
     
                     <div class="d-flex justify-content-center gap-4">
-                        @if(Carbon\Carbon::now() >= $event->registration_start_date && Carbon\Carbon::now() <= $event->registration_end_date)
-                                @if(isset($registrations) && $registrations->contains('event_id', $event->id))
-                                    <a href="#" class="btn fw-semibold p-2 ps-4 pe-4" style="background-color: rgba(183, 207, 91, 1); border-radius: 40px; color: black;" id="greenbutton" disabled>You're Registered!</a>
-                                @else
-                                    <a href="{{ route('registration.show', $event->id) }}" class="btn fw-semibold p-2 ps-4 pe-4" style="background-color: rgba(183, 207, 91, 1); border-radius: 40px; color: black;" id="greenbutton">Register</a>
-                                    <a href="{{ route('event.detail', $event->id) }}" class=" btn fw-semibold p-2 ps-4 pe-4" style="background-color: rgba(183, 207, 91, 1); border-radius: 40px; text-decoration: none; color: black;" id="greenbutton">Details</a>
-                                @endif
-                        @else
-                            <a href="{{ route('event.detail', $event->id) }}" class="btn fw-semibold p-2 ps-4 pe-4 w-75 text-center" style="background-color: rgba(183, 207, 91, 1); border-radius: 40px; color: black;" id="greenbutton">Details</a>
-                        @endif
+                        <a href="{{ route('event.detail', $event->id) }}" class="btn fw-semibold p-2 ps-4 pe-4 w-75 text-center" style="background-color: rgba(183, 207, 91, 1); border-radius: 40px; color: black;" id="greenbutton">Details</a>
                     </div>
                 </div>
             </div>

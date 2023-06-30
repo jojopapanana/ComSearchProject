@@ -16,6 +16,13 @@ class ParticipantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __invoke()
+    {  
+        $events = Event::all();
+        return view('welcome', ['events' => $events]);
+    }
+
     public function index()
     {
         //

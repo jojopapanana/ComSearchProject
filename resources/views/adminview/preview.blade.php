@@ -1,4 +1,5 @@
-<x-layout title="Detail">
+<x-layout title="Preview">
+  <x-slot name="navbarAdmin"></x-slot>
     <div class="d-flex">
       <img src="/storage/images/{{ $event->poster }}" alt="EVENT" style="heigh:100vh; width: 45vw">
 
@@ -6,8 +7,14 @@
   
         <div class="p-3" style="width: 50vw">
   
-          <i class="bi bi-caret-right-fill" style="font-size: 3rem; color: rgba(40, 84, 48, 1)"></i>
-          <p class="fs-1 fw-bold pt-2 ps-4 d-inline-block" style="color: rgba(40, 84, 48, 1)">Details</p>
+          
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <i class="bi bi-caret-right-fill" style="font-size: 3rem; color: rgba(40, 84, 48, 1)"></i>
+                <p class="fs-1 fw-bold pt-2 ps-4 d-inline-block" style="color: rgba(40, 84, 48, 1)">Details</p>
+            </div>
+            <a href="{{ route('event.edit', $event->id) }}" class="btn fw-semibold shadow" style="background-color: rgba(183, 207, 91, 1); border-radius: 40px; width: 10vw; height: 5vh">Edit Event</a>
+          </div>
           <hr class="bg-dark border-2 border-top border-dark mt-0">
   
           <div class="fw-semibold text-center d-flex align-items-center justify-content-center" style="font-size: 2.1875rem">

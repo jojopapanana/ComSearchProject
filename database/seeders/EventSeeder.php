@@ -25,8 +25,8 @@ class EventSeeder extends Seeder
             'event_ig1' => 'bnecalamsutera',
             'event_description' => 'This event is a social event held by BNEC!',
             'group_link' => 'https://mybnec.org/',
-            'poster' => 'bnec.png',
-            'picture' => 'AUTOBIOGRAPHY.jpg'],
+            'thumbnail' => 'bnec.png',
+            'poster' => 'AUTOBIOGRAPHY.jpg'],
 
             ['event_name' => '2023 BNCC Social Event', 
             'organizer' => 'Bina Nusantara Computer Club',
@@ -37,8 +37,8 @@ class EventSeeder extends Seeder
             'event_ig1' => 'bnccalsut',
             'event_description' => 'This event is a social event held by BNCC!',
             'group_link' => 'https://bncc.net/',
-            'poster' => 'bncc.png',
-            'picture' => 'avatar.jpg'],
+            'thumbnail' => 'bncc.png',
+            'poster' => 'avatar.jpg'],
 
             ['event_name' => 'KMBD Social Event', 
             'organizer' => 'Keluarga Mahasiswa Buddhis Dhammavaddhana',
@@ -49,8 +49,8 @@ class EventSeeder extends Seeder
             'event_ig1' => 'kmbdalsut',
             'event_description' => 'This event is a social event held by KMBD!',
             'group_link' => 'https://www.kmbd.info/',
-            'poster' => 'kmbd.jpg',
-            'picture' => 'blackpanther.jpg'],
+            'thumbnail' => 'kmbd.jpg',
+            'poster' => 'blackpanther.jpg'],
 
             ['event_name' => 'BPreneur Social Event', 
             'organizer' => 'Bina Nusantara Entreprenur Club',
@@ -61,8 +61,8 @@ class EventSeeder extends Seeder
             'event_ig1' => 'bpreneur',
             'event_description' => 'This event is a social event held by BPreneur!',
             'group_link' => 'https://student-activity.binus.ac.id/b-preneur/',
-            'poster' => 'bpreneur.png',
-            'picture' => 'iwdws.jpg'],
+            'thumbnail' => 'bpreneur.png',
+            'poster' => 'iwdws.jpg'],
 
             ['event_name' => 'BNMC Social Event', 
             'organizer' => 'Bina Nusantara Mandarin Club',
@@ -73,8 +73,8 @@ class EventSeeder extends Seeder
             'event_ig1' => 'bnmcalamsutera',
             'event_description' => 'This event is a social event held by BNMC!',
             'group_link' => 'https://student-activity.binus.ac.id/bnmc/',
-            'poster' => 'bnmc.jpg',
-            'picture' => 'mindcage.jpg']
+            'thumbnail' => 'bnmc.jpg',
+            'poster' => 'mindcage.jpg']
         ]);
     }
 }
