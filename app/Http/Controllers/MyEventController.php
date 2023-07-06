@@ -18,9 +18,11 @@ class MyEventController extends Controller
      */
     public function index()
     {
+        $user_id = auth()->id();
+        // dd($user_id);
         $events = DB::table('registrations')->join('events', 'registrations.event_id', '=', 'events.id')
                                             ->select('events.*')
-                                            ->where('registrations.user_id', '=', '1')
+                                            ->where('registrations.user_id', '=', $user_id)
                                             ->get();
         // dd($events);
         return view('event', ['events' => $events]);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\User;
 use App\Models\Participant;
 use App\Models\Registration;
 use Illuminate\Support\Facades\DB;
@@ -16,6 +17,13 @@ class ParticipantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __invoke()
+    {  
+        $events = Event::all();
+        return view('welcome', ['events' => $events]);
+    }
+
     public function index()
     {
         //
@@ -39,6 +47,7 @@ class ParticipantController extends Controller
      */
     public function store(Request $request, Event $event)
     {
+        $user_id = auth()->id();
         $request->validate([
             'participant_name' => 'required|string',
             'participant_nim' => 'required|integer',
@@ -71,8 +80,10 @@ class ParticipantController extends Controller
             $file_name3 = 'NULL';
         }
 
+        // dd($user_id);
+
         $participant_id = Participant::insertGetId([
-            'user_id' => 1,
+            'user_id' => $user_id,
             'participant_name' => $request->participant_name,
             'participant_nim' => $request->participant_nim,
             'binusian_email' => $request->binusian_email,
@@ -85,7 +96,7 @@ class ParticipantController extends Controller
         Registration::create([
             'participant_id' => $participant_id,
             'event_id' => $event->id,
-            'user_id' => 1
+            'user_id' => $user_id
         ]);
         // dd($event->group_link);
 

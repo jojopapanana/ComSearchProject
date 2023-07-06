@@ -13,7 +13,11 @@
 </head>
 <body>
     <div id="app">
-        <x-navbar></x-navbar>
+        @if(isset($navbar))
+            <x-navbar />
+        @elseif(isset($navbarAdmin))
+            <x-navbar-admin />
+        @endif
         <main class="mt-5 pt-5 d-flex flex-column min-vh-100">
             {{ $slot }}
         </main>

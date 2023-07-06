@@ -27,8 +27,10 @@ return new class extends Migration
             $table->string('event_ig3')->nullable();
             $table->longText('event_description');
             $table->string('group_link');
+            $table->string('line_cp')->nullable();
+            $table->string('wa_cp')->nullable();
+            $table->string('thumbnail');
             $table->string('poster');
-            $table->string('picture');
         });
     }
 

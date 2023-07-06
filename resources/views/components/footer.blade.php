@@ -6,7 +6,7 @@
         </div>
         <div class="align-self-center col-2 mt-3" style="font-size: 0.9rem; font-weight:bold">
             <div class="mb-3">
-                <a href="{{ route('index') }}" class="text-dark" >Home</a>
+                <a href="{{ route('dashboard') }}" class="text-dark" >Home</a>
             </div>
             <div class="mb-3">
                 <a href="{{ route('event.ongoing') }}" class="text-dark pb-3" >Ongoing</a>
