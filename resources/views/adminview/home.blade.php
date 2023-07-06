@@ -38,10 +38,10 @@
                             <div class="d-flex justify-content-center gap-1">
                                 <a href="{{ route('event.edit', $event->id) }}" class="btn fw-semibold p-2 ps-2 pe-2 w-50 text-center" style="background-color: rgba(183, 207, 91, 1); border-radius: 20px; color: black;" id="greenbutton">Edit</a>
                                 <a href="{{ route('event.preview', $event->id) }}" class="btn fw-semibold p-2 ps-2 pe-2 w-50 text-center" style="background-color: rgba(183, 207, 91, 1); border-radius: 20px; color: black;" id="greenbutton">Preview</a>
-                                <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn fw-semibold p-2 ps-2 pe-2 w-50 text-center" style="background-color:red; border-radius: 40px; color: white;" id="greenbutton">Delete</button>
+                                <button data-bs-toggle="modal" data-bs-target="#exampleModal{{ $event->id }}" class="btn fw-semibold p-2 ps-2 pe-2 w-50 text-center" style="background-color:red; border-radius: 40px; color: white;" id="greenbutton">Delete</button>
                             </div>
 
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="exampleModal{{ $event->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-body fs-5 text-center">

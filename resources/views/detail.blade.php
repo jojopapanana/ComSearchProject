@@ -1,4 +1,5 @@
 <x-layout title="Detail">
+  <x-slot name="navbar"></x-slot>
     <div class="d-flex">
       <img src="/storage/images/{{ $event->poster }}" alt="EVENT" style="heigh:100vh; width: 45vw">
 

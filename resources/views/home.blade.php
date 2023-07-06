@@ -1,4 +1,5 @@
 <x-layout title="Home">
+    <x-slot name="navbar"></x-slot>
     <div class="p-5">
         <div class="row mb-2">
             @foreach ($events as $event)

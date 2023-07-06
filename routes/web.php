@@ -35,6 +35,7 @@ Route::prefix('event')->name('event.')->group(function() {
 	Route::get('ongoing', [EventController::class, 'ongoing'])->name('ongoing');
 	Route::get('upcoming', [EventController::class, 'upcoming'])->name('upcoming');
 	Route::get('preview/{event}', [EventController::class, 'preview'])->name('preview');
+    Route::get('verify', [EventController::class, 'verify'])->name('verify');
     Route::get('finish', [EventController::class, 'finish'])->name('finish');
     Route::get('create', [EventController::class, 'create'])->name('create');
     Route::post('store', [EventController::class, 'store'])->name('store');
@@ -44,11 +45,11 @@ Route::prefix('event')->name('event.')->group(function() {
     Route::match(['get', 'put'], 'update/{id}', [EventController::class, 'update'])->name('update');
 });
 
-Route::resource('/', DashboardController::class);
+// Route::resource('/', HomeController::class);
 Route::resource('registration', ParticipantController::class);
-Route::post('/registration/{event}', [ParticipantController::class, 'store'])->name('registration.custom.store');
-Route::resource('myevent', MyEventController::class);
+Route::post('/registration/{event}', [ParticipantController::class, 'store'])->middleware('auth')->name('registration.custom.store');
+Route::resource('myevent', MyEventController::class)->middleware('auth');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [DashboardController::class, 'index'])->name('home');

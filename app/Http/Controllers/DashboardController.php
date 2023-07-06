@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Registration;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
@@ -19,9 +20,10 @@ class DashboardController extends Controller
     {      
         if(auth()->user()->role == 'Participant') {
 
-            $events = Event::all();                              
+            $events = Event::all();
+            $registrations = Registration::all();                     
             
-            return view('welcome', ['events' => $events]);
+            return view('welcome', ['events' => $events], ['registrations' => $registrations]);
 
         } else {
 

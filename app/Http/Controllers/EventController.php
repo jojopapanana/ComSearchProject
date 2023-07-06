@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
-use App\Models\temp;
 use App\Models\Registration;
 use Illuminate\Support\Facades\DB;
 
@@ -33,6 +32,11 @@ class EventController extends Controller
      {
         $event = Event::find($id);
         return view('adminview.preview', ['event' => $event]);
+     }
+
+     public function verify()
+     {
+        return view('adminview.verify');
      }
 
      public function finish()
@@ -220,10 +224,11 @@ class EventController extends Controller
     public function destroy($id)
     {
         $event = Event::find($id);
+        // dd($event);
         $event->delete();
 
         $events = Event::all();
         // dd($events);
-        return view('adminview.home', ['events' => $events]);
+        return redirect()->route('dashboard', ['events' => $events]);
     }
 }

@@ -1,4 +1,5 @@
 <x-layout title="Registration">
+  <x-slot name="navbar"></x-slot>
   <div class="p-5">
     @if(session()->has('success'))
         <div class="alert alert-success">
@@ -33,6 +34,7 @@
 
           <form id="registform" method="POST" action="{{ route('registration.custom.store', ['event' => $event->id]) }}" enctype="multipart/form-data">
             @csrf
+            {{-- <p>{{ Auth::user()->id }}</p> --}}
               <div class="mb-3">
                 <div class="d-flex">
                   <label for="participant_name" class="form-label fw-semibold">Name</label>

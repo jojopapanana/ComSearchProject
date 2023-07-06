@@ -3,6 +3,7 @@
     <div class="p-5">
         <div class="row mb-2">
             @foreach ($events as $event)
+            @if(Carbon\Carbon::now() < $event->event_start_date)
             <div class="col-3 rounded mb-5" style="height: 40vh">
                 <div class="h-50 rounded-top" style="background-color: gray">
                     <img src="/storage/images/events/{{ $event->thumbnail }}" alt="EVENT" class="rounded-top h-100 object-fit-scale w-100">
@@ -25,7 +26,7 @@
     
                     <div class="d-flex justify-content-center gap-4">
                         @if(Carbon\Carbon::now() >= $event->registration_start_date && Carbon\Carbon::now() <= $event->registration_end_date)
-                                @if(isset($registrations) && $registrations->contains('event_id', $event->id))
+                                @if(isset($registrations) && $registrations->contains('event_id', $event->id) && $registrations->contains('user_id', Auth::user()->id))
                                     <a href="#" class="btn fw-semibold p-2 ps-4 pe-4" style="background-color: rgba(183, 207, 91, 1); border-radius: 40px; color: black;" id="greenbutton" disabled>You're Registered!</a>
                                 @else
                                     <a href="{{ route('registration.show', $event->id) }}" class="btn fw-semibold p-2 ps-4 pe-4" style="background-color: rgba(183, 207, 91, 1); border-radius: 40px; color: black;" id="greenbutton">Register</a>
@@ -37,6 +38,7 @@
                     </div>
                 </div>
             </div>
+            @endif
             @endforeach
         </div>
     </div>
